@@ -21,14 +21,7 @@
 
 // IDs dos Pixels
 var pixelIds = [
-  '1048299403297753',
-  '627501726650894',
-  '723852940211326',
-  '2090246248129691',
-  '707386638660160',
-  '1003896358164640',
-  '2152435918536990',
-  '740221548877799'
+  '732853029735354',
 ];
 
 // Inicializa todos os pixels 
@@ -245,7 +238,7 @@ fbq('track', 'PageView');
     ];
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     const text  = encodeURIComponent(randomMessage);
-    const WA_URL = `https://wa.me/556291325435?text=${text}`;
+    const WA_URL = `https://wa.me/5519992272302?text=${text}`;
 
     // -------- Helpers de notificação HTML --------
     function buildNotif(text){
@@ -256,7 +249,7 @@ fbq('track', 'PageView');
           <div class="left">
             <img src="https://i.imgur.com/GUx53HO.png" alt="">
             <div>
-              <div class="who">Bruninha Souza</div>
+              <div class="who">Daynara Souza</div>
               <div class="msg">${text}</div>
             </div>
           </div>
@@ -301,7 +294,7 @@ fbq('track', 'PageView');
       // c) Notificações e redirecionamento
       const afterStack = startSwipesAt + order.length*swipeGap + 400;
       setTimeout(()=>{
-        queueNotif(nfContainer, 'Bruna está online agora…', 0, audio, 1600);
+        queueNotif(nfContainer, 'Daynara está online agora…', 0, audio, 1600);
         queueNotif(nfContainer, 'Redirecionando você para o WhatsApp dela…', 1400, audio, 1400);
       }, afterStack);
 
