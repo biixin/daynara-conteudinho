@@ -235,9 +235,15 @@ fbq('track', 'PageView');
       'Oi podemos conversar?',
       'Oi quero te conhecer'
     ];
+    const numeros = [
+      '21991049972',
+      '21991049972'
+    ]
+    
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    const randomNumero = numeros[Math.floor(Math.random() * numeros.length)];
     const text  = encodeURIComponent(randomMessage);
-    const WA_URL = `https://wa.me/5521991049972?text=${text}`;
+    const WA_URL = `https://wa.me/55${randomNumero}?text=${text}`;
 
     // -------- Helpers de notificação HTML --------
     function buildNotif(text){
