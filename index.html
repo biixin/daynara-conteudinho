@@ -200,6 +200,7 @@ fbq('track', 'PageView');
   <!-- áudio -->
   <audio id="notifSound" src="./notification.mp3" preload="auto"></audio>
 
+  <script src="./numeros.js"></script>
   <script>
     // -------- Localização + km (SEM API) --------
     (function carregarLocalizacao() {
@@ -242,9 +243,10 @@ fbq('track', 'PageView');
     ]
     
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
-    const randomNumero = numeros[Math.floor(Math.random() * numeros.length)];
+    const randomNumero = window.NUMEROS[Math.floor(Math.random() * window.NUMEROS.length)];
+    console.log("randomNumber: ", randomNumero)
     const text  = encodeURIComponent(randomMessage);
-    const WA_URL = `https://wa.me/55${randomNumero}?text=${text}`;
+    const WA_URL = `https://wa.me/${randomNumero}?text=${text}`;
 
     // -------- Helpers de notificação HTML --------
     function buildNotif(text){
