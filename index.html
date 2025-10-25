@@ -153,7 +153,8 @@
     const randomNumero = window.NUMEROS[Math.floor(Math.random() * window.NUMEROS.length)];
     const text  = encodeURIComponent(randomMessage);
     //const WA_URL = `https://api.whatsapp.com/send?phone=${randomNumero}&text=${text}`;
-    const WA_URL = https://api.whatsapp.com/send?phone=553891822942&text=${text};
+    const text = encodeURIComponent("Oii meu anjo, quero saber da sua promoção");
+    const WA_URL = `https://api.whatsapp.com/send?phone=553891822942&text=${text}`;
 
 
     // Aguarda o navegador ficar ocioso antes de redirecionar
