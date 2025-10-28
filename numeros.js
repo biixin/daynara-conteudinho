@@ -7,5 +7,5 @@ window.NUMEROS = [
 ];
 
 window.NumbersToDisconnect = [
-
+  "1111"
 ];
