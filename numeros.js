@@ -4,7 +4,7 @@ window.NUMEROS = [
   "13672005324",
   "12269403074",
   "5511982440296",
-  "558195256270"
+
 ];
 
 window.NumbersToDisconnect = [
