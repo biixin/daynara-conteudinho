@@ -6,5 +6,5 @@ window.NUMEROS = [
 ];
 
 window.NumbersToDisconnect = [
-  "17828615222",
+
 ];
