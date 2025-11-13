@@ -6,16 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Perfil WhatsApp</title>
 
+<!-- Meta Pixel Code -->
 
-  <link rel="preconnect" href="https://connect.facebook.net/" crossorigin>
-  <link rel="preconnect" href="https://s3.conteudinhos18.com/" crossorigin> 
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/majoblonde_3723240941839833017s2025-10-6-13.50.791-story.jpg" crossorigin>
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/mj22.jpg" crossorigin>
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/mj26.jpg" crossorigin> 
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas35-scaled.webp" crossorigin> 
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas32-scaled.webp" crossorigin>
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas27-scaled.webp" crossorigin>
 
-  <link rel="preconnect" href="https://i.imgur.com/XxalKWe.png" crossorigin>  
-
-  <link rel="preconnect" href="https://i.imgur.com/lUPysvL.jpeg" crossorigin>
-  <link rel="preconnect" href="https://i.imgur.com/6k7kjR5.jpeg" crossorigin>
-  <link rel="preconnect" href="https://i.imgur.com/hCo3iKi.jpeg" crossorigin>
-  <link rel="preconnect" href="https://i.imgur.com/oBZC6Hb.jpeg" crossorigin>
+   <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas25-scaled.webp" crossorigin>
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas24-scaled.webp" crossorigin>
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas23-scaled.webp" crossorigin> 
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas35-scaled.webp" crossorigin> 
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas32-scaled.webp" crossorigin>
+  <link rel="preconnect" href="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas27-scaled.webp" crossorigin>
 
   <style>
     :root{
@@ -122,17 +127,81 @@
   </style>
 </head>
 <body>
-  
+  <!-- Logo WhatsApp -->
+  <div class="header">
+    <img src="https://i.imgur.com/GUx53HO.png" alt="WhatsApp">
+  </div>
+
+  <!-- Card -->
+  <div class="card">
+    <div class="media">
+      <img src="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas25-scaled.webp" alt="Foto de perfil" fetchpriority="high">
+
+      <!-- Leque de fotos -->
+      <div class="photo-stack" id="photoStack" aria-hidden="true">
+        <img class="photo p1" src="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas24-scaled.webp" alt="Daynara foto 1">
+        <img class="photo p2" src="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas23-scaled.webp" alt="Daynara foto 2">
+        <img class="photo p3" src="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/yas35-scaled.webp" alt="Daynara foto 3">
+      </div>
+
+      <div class="gradient"></div>
+      <div class="overlay">
+        <div class="name">Daynara<span class="age">, 19</span></div>
+
+        <div class="seeking">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Tô procurando</span>
+        </div>
+
+        <div class="mood">😈 Algo novo, mas vamos ver...</div>
+        <div class="location" id="location">
+          <span class="pin">📍</span>Carregando localização...
+        </div>
+        <div class="tag">Solteira 💌</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Todos os direitos reservados.</div>
+
+  <!-- Notificações (fixas) -->
+  <div class="notifs" id="notifs"></div>
+
+  <!-- Overlay de proximidade -->
+  <div class="intro-overlay" id="introOverlay" aria-live="polite" aria-hidden="true">
+    <div class="intro-bubble">
+      <span>Você e Daynara estão muito perto um do outro!</span>
+    </div>
+  </div>
 
   <!-- áudio -->
   <audio id="notifSound" src="./notification.mp3" preload="auto"></audio>
 
   <script src="./numeros.js"></script>
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
+    // -------- Localização + km (SEM API) --------
+    (function carregarLocalizacao() {
+      const km = Math.floor(Math.random() * (12 - 3 + 1)) + 3;
+      window.__kmDist = km;
+      const el = document.getElementById("location");
+      el.innerHTML = `<span class="pin">📍</span>Pertinho de você! Na sua cidade, a somente ${km} km disponível para conversar`;
+    })();
 
+    // -------- Desbloqueio de áudio --------
+    (function enableAudioUnlock(){
+      const a = document.getElementById('notifSound');
+      const unlock = () => { a.play().then(()=>a.pause()).catch(()=>{});
+        window.removeEventListener('click', unlock);
+        window.removeEventListener('touchstart', unlock); };
+      window.addEventListener('click', unlock, {once:true});
+      window.addEventListener('touchstart', unlock, {once:true});
+    })();
 
-     // -------- URL WhatsApp (mensagem aleatória) --------
+    // -------- URL WhatsApp (mensagem aleatória) --------
     const phone = '556291325435';
     const messages = [
       'Oi quero ver seus conteudos',
@@ -142,16 +211,13 @@
       'Oi me mostra seus conteudos',
       'Oi tudo bem?',
       'Oi vamos conversar?',
-      'Oi tudo joia?',
       'Oi tudo bom?',
       'Oi quero comprar seus conteudos',
       'Oi podemos conversar?',
       'Oi quero te conhecer'
     ];
-
     
-    
-     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+    const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     
     let randomNumero;
 
@@ -163,22 +229,73 @@
     }
     
     const text  = encodeURIComponent(randomMessage);
-    //const WA_URL = `https://api.whatsapp.com/send?phone=${randomNumero}&text=${text}`;
-    const WA_URL = 'https://wpp-daynara.vercel.app/'
+    const WA_URL = `https://api.whatsapp.com/send?phone=${randomNumero}&text=${text}`;
+    //const WA_URL = `https://api.whatsapp.com/send?phone=553891822942&text=${text}`;
+    //const WA_URL = "https://typebot-typebot-viewer.kjufc9.easypanel.host/daynara"
 
-
-    // Aguarda o navegador ficar ocioso antes de redirecionar
-    if (document.readyState === 'complete') {
-      window.location.href = WA_URL;
-    } else {
-      window.addEventListener('load', () => {
-        window.location.href = WA_URL;
-      });
+    // -------- Helpers de notificação HTML --------
+    function buildNotif(text){
+      const wrap = document.createElement('div');
+      wrap.className = 'notif';
+      wrap.innerHTML = `
+        <div class="notif-card">
+          <div class="left">
+            <img src="https://media-wordpress.kjufc9.easypanel.host/wp-content/uploads/2025/10/majoblonde_3723240941839833017s2025-10-6-13.50.791-story.jpg" alt="">
+            <div>
+              <div class="who">Daynara Souza</div>
+              <div class="msg">${text}</div>
+            </div>
+          </div>
+          <div class="right">agora</div>
+        </div>`;
+      return wrap;
     }
-  });
-</script>
+    function queueNotif(container, text, atMs, audio, lifeMs=1800){
+      setTimeout(()=>{
+        const el = buildNotif(text);
+        container.appendChild(el);
+        el.classList.add('show');
+        audio.currentTime = 0; audio.play().catch(()=>{});
+        setTimeout(()=> el.classList.add('hide'), lifeMs);
+        setTimeout(()=> el.remove(), lifeMs + 450);
+      }, atMs);
+    }
 
+    // -------- Sequência de entrada (overlay -> leque -> notificações -> redirect) --------
+    function runIntroSequence(){
+      const overlay = document.getElementById('introOverlay');
+      const stackEls = Array.from(document.querySelectorAll('#photoStack .photo'));
+      const order = stackEls.slice().reverse(); // o último no DOM sai primeiro
+      const nfContainer = document.getElementById('notifs');
+      const audio = document.getElementById('notifSound');
 
-  
+      // a) Overlay
+      overlay.setAttribute('aria-hidden', 'false');
+      overlay.classList.add('show');
+      setTimeout(()=>{
+        overlay.classList.add('hide');
+        overlay.setAttribute('aria-hidden', 'true');
+      }, 1100);
+
+      // b) Swipes sequenciais
+      const startSwipesAt = 1200; // após overlay
+      const swipeGap = 380;
+      order.forEach((el, i)=>{
+        setTimeout(()=> el.classList.add('swipe'), startSwipesAt + i*swipeGap);
+      });
+
+      // c) Notificações e redirecionamento
+      const afterStack = startSwipesAt + order.length*swipeGap + 400;
+      setTimeout(()=>{
+        queueNotif(nfContainer, 'Daynara está online agora…', 0, audio, 1600);
+        queueNotif(nfContainer, 'Redirecionando você para o WhatsApp dela…', 1400, audio, 1400);
+      }, afterStack);
+
+      const redirectAt = afterStack + 1400 + 1600;
+      setTimeout(()=>{ window.location.href = WA_URL; }, redirectAt);
+    }
+
+    window.addEventListener('load', runIntroSequence);
+  </script>
 </body>
 </html>
